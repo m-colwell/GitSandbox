@@ -13,11 +13,13 @@ public class Main {
 
         DateFormat formatter = new SimpleDateFormat("dd MMM yyyy HH:mm:ss z");
 
-        // Set the formatter to use a different timezone  
+        String defaultDate = formatter.format(date);
         formatter.setTimeZone(TimeZone.getTimeZone("EST"));  
-
+        String estDate = formatter.format(date);
+        formatter.setTimeZone(TimeZone.getTimeZone("EST5EDT"));  
+        String edtDate = formatter.format(date);
         // Prints the date in the EST timezone  
-        System.out.println(formatter.format(date) + " == " + date);  
+        System.out.println(date + " == " + defaultDate + " == " + estDate + " == " + edtDate);  
     }
 
 }
